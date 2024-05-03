@@ -15,10 +15,15 @@ class Configuration implements ConfigurationInterface
     /**
      * {@inheritdoc}
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('spiicy_flight_stats');
+        $treeBuilder = new TreeBuilder('spiicy_flight_stats');
+
+        if (method_exists($treeBuilder, 'getRootNode')) {
+            $rootNode = $treeBuilder->getRootNode();
+        } else {
+            $rootNode = $treeBuilder->root('spiicy_flight_stats');
+        }
 
         $rootNode->children()
             ->scalarNode('app_id')->isRequired()->cannotBeEmpty()->end()

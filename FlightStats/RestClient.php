@@ -6,7 +6,6 @@ use GuzzleHttp\Client;
 
 class RestClient
 {
-
     protected $config;
     protected $apiUrl;
 
@@ -28,7 +27,7 @@ class RestClient
      * @param array $params Parameters (Optional)
      * @return array
      */
-    protected function request($apiCall, $params = array())
+    protected function request($apiCall, $params = [])
     {
         $client = new Client([
             'base_uri' => $this->apiUrl,
@@ -41,5 +40,4 @@ class RestClient
 
         return $client->request('GET', $apiCall);
     }
-
 }
