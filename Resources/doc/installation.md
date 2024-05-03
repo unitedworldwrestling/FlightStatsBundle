@@ -27,13 +27,20 @@ public function registerBundles()
 }
 ```
 
+alternatively in Symfony 5+, register in config/bundles.php
+
+```php
+// ...
+    Spiicy\Bundle\FlightStatsBundle\SpiicyFlightStatsBundle::class => ['all' => true],
+// ...
+```
 
 ## Config
 
 Add the following lines:
 
 ``` yml
-// app/config/config.yml
+// config/packages/spiicy_flight_stats.yaml
 spiicy_flight_stats:
     app_id: <your id>
     app_key: <your key>
