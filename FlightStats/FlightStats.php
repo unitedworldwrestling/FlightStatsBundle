@@ -2,11 +2,8 @@
 
 namespace Spiicy\Bundle\FlightStatsBundle\FlightStats;
 
-use Spiicy\Bundle\FlightStatsBundle\FlightStats\RestClient;
-
 class FlightStats extends RestClient
 {
-
     protected $config;
     protected $apiUrl;
 
@@ -59,5 +56,4 @@ class FlightStats extends RestClient
         
         return new Methods\Airports($this->config, $api);
     }
-
 }
