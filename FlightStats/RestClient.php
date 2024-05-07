@@ -25,7 +25,6 @@ class RestClient
      *
      * @param string $apiCall the API call function
      * @param array $params Parameters (Optional)
-     * @return array
      */
     protected function request($apiCall, $params = [])
     {
